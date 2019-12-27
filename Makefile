@@ -8,7 +8,7 @@ run_app:
 
 .PHONY: build_docker
 build_docker:
-	docker build -t $(docker_tag) .
+	docker build -t $(docker_tag) -f samplenode/Dockerfile .
 
 .PHONY: run_docker
 run_docker:
@@ -21,3 +21,9 @@ test_docker:
 .PHONY: push_docker
 push_docker:
 	docker push $(docker_tag)
+
+.PHONY: apply_yaml
+apply_yaml:
+	kubectl apply -f samplenode/samplenode-ns.yaml
+	kubectl apply -f samplenode/samplenode-rc.yaml
+	kubectl apply -f samplenode/samplenode-svc.yaml
