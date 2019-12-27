@@ -27,3 +27,4 @@ apply_yaml:
 	kubectl apply -f samplenode/samplenode-ns.yaml
 	kubectl apply -f samplenode/samplenode-rc.yaml
 	kubectl apply -f samplenode/samplenode-svc.yaml
+

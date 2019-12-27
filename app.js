@@ -14,8 +14,9 @@ var handler = function(request, response) {
         "from " + os.hostname() + "\n";
         response.end(text);
     } else if (request.url === '/healthCheck') {
+        var random = Math.random( );
         response.statusCode = 200;
-        response.end("OK");
+        response.end("OK " + random);
     }
 };
 
