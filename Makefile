@@ -16,7 +16,10 @@ run_docker:
 
 .PHONY: test_docker
 test_docker:
-	curl http://localhost:3000
+	echo "---- / ---- \n"
+	curl http://localhost
+	echo "--- /healthCheck --- \n"
+	curl http://localhost/healthCheck
 
 .PHONY: push_docker
 push_docker:

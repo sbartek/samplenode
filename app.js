@@ -14,9 +14,15 @@ var handler = function(request, response) {
         "from " + os.hostname() + "\n";
         response.end(text);
     } else if (request.url === '/healthCheck') {
-        var random = Math.random( );
-        response.statusCode = 200;
-        response.end("OK " + random);
+        var randomNumber = Math.random( );
+        console.log(randomNumber);
+        if (randomNumber < 0.25) {
+            response.writeHead(500);
+            response.end("Not OK");
+        } else {
+            response.statusCode = 200;
+            response.end("OK");
+        }
     }
 };
 
