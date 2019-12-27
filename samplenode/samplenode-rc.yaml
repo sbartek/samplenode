@@ -19,4 +19,5 @@ spec:
           httpGet:
             path: /healthCheck
             port: 80
+          initialDelaySeconds: 15
         
