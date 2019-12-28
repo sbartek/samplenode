@@ -1,7 +1,7 @@
 const http = require('http');
 const os = require('os');
 
-const port = 80;
+const port = 8080;
 
 var handler = function(request, response) {
     response.setHeader('Content-Type', 'text/plain');
@@ -16,7 +16,7 @@ var handler = function(request, response) {
     } else if (request.url === '/healthCheck') {
         var randomNumber = Math.random( );
         console.log(randomNumber);
-        if (randomNumber < .5) {
+        if (randomNumber < .1) {
             response.writeHead(500);
             response.end("Not OK");
         } else {

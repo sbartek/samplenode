@@ -7,8 +7,9 @@ metadata:
     run: samplenode
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+  - name: http
+    port: 80
+    targetPort: http
   selector:
     run: samplenode
   type: LoadBalancer
